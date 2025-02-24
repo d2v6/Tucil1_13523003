@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.GridPane?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/22"
+   xmlns:fx="http://javafx.com/fxml/1"
+   fx:controller="com.tucil1.MainController" stylesheets="@Page.css">
+   <VBox alignment="TOP_CENTER">
+      <Text text="IQ Puzzler Pro Solver" styleClass="title-text" />
+   </VBox>
+   <VBox alignment="CENTER" VBox.vgrow="ALWAYS">
+      <Button fx:id="fileUploadButton" text="(Input dari file)" onAction="#handleFileUpload" />
+      <TextArea fx:id="dataInputField" wrapText="true" prefHeight="300.0" maxWidth="300.0" />
+      <Button fx:id="fileSolveButton" text="Solve" onAction="#handleSolve" />
+      <Text fx:id="errorText" wrappingWidth="500.0" textAlignment="CENTER" />
+      <ScrollPane fx:id="outputScrollPane" prefHeight="300.0" maxWidth="500.0">
+         <GridPane fx:id="outputGrid" alignment="CENTER" />
+      </ScrollPane>
+      <Text fx:id="casesText" wrappingWidth=" 500.0" textAlignment="CENTER" />
+      <Text fx:id="timeText" wrappingWidth=" 500.0" textAlignment="CENTER" />
+      <Button fx:id="fileSolveButton" text="Download" onAction="#handleDownload" />
+   </VBox>
+</VBox>
