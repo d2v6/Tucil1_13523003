@@ -28,29 +28,16 @@ public class Solver {
         if (piecesPlaced == allPieces.size()) {
             return true;
         }
-        int boardLength = board.length;
-        int boardWidth = board[0].length;
         for (int pieceIndex = 0; pieceIndex < allPieces.size(); pieceIndex++) {
             if (usedPieces[pieceIndex])
                 continue;
             for (Piece piece : allPieces.get(pieceIndex)) {
                 char[][] pieceMatrix = piece.getPiece();
-                char pieceChar = ' ';
-                for (char[] row : pieceMatrix) {
-                    for (char c : row) {
-                        if (c != ' ') {
-                            pieceChar = c;
-                            break;
-                        }
-                    }
-                    if (pieceChar != ' ')
-                        break;
-                }
                 for (int row = 0; row <= board.length - pieceMatrix.length; row++) {
                     for (int col = 0; col <= board[0].length - pieceMatrix[0].length; col++) {
                         caseCounter[0]++;
                         boolean canPlace = true;
-                        if (pieceMatrix.length + row > boardLength || pieceMatrix[0].length + col > boardWidth) {
+                        if (pieceMatrix.length + row > board.length || pieceMatrix[0].length + col > board[0].length) {
                             canPlace = false;
                         }
                         for (int i = 0; i < pieceMatrix.length && canPlace; i++) {
@@ -64,7 +51,7 @@ public class Solver {
                             for (int i = 0; i < pieceMatrix.length; i++) {
                                 for (int j = 0; j < pieceMatrix[0].length; j++) {
                                     if (pieceMatrix[i][j] != ' ') {
-                                        board[row + i][col + j] = pieceChar;
+                                        board[row + i][col + j] = pieceMatrix[i][j];
                                     }
                                 }
                             }
