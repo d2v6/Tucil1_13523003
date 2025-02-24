@@ -1,0 +1,20 @@
+.title-text {
+  -fx-font-size: 50px;
+  -fx-font-weight: bold;
+}
+
+.puzzle-cell {
+  -fx-min-width: 40px;
+  -fx-min-height: 40px;
+  -fx-max-width: 40px;
+  -fx-max-height: 40px;
+  -fx-alignment: center;
+  -fx-font-weight: bold;
+  -fx-text-fill: white;
+}
+
+.output-grid {
+  -fx-hgap: 2;
+  -fx-vgap: 2;
+  -fx-padding: 10;
+}
