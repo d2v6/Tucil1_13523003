@@ -68,6 +68,7 @@ public class MainController {
             } catch (IOException e) {
                 casesText.setText("");
                 timeText.setText("");
+                outputGrid.getChildren().clear();
                 errorText.setText("Error reading file: " + e.getMessage());
             }
         }
@@ -80,6 +81,7 @@ public class MainController {
             errorText.setText("Input empty");
             casesText.setText("");
             timeText.setText("");
+            outputGrid.getChildren().clear();
             return;
         }
         int Rows, Columns;
@@ -95,6 +97,7 @@ public class MainController {
                             .setText("First line must contain exactly three numbers (rows, columns, number of pieces)");
                     casesText.setText("");
                     timeText.setText("");
+                    outputGrid.getChildren().clear();
                     return;
                 }
                 try {
@@ -105,12 +108,14 @@ public class MainController {
                     errorText.setText("First line must contain only numbers");
                     casesText.setText("");
                     timeText.setText("");
+                    outputGrid.getChildren().clear();
                     return;
                 }
                 if (Rows <= 0 || Columns <= 0 || piecesCount > 26) {
                     errorText.setText("Rows and Columns must be above 0, Number of pieces must be below 27");
                     casesText.setText("");
                     timeText.setText("");
+                    outputGrid.getChildren().clear();
                     return;
                 }
                 board = new char[Rows][Columns];
@@ -125,6 +130,7 @@ public class MainController {
                 errorText.setText("Only DEFAULT available");
                 casesText.setText("");
                 timeText.setText("");
+                outputGrid.getChildren().clear();
                 return;
             }
             int inputPiecesCount = 0;
@@ -146,6 +152,7 @@ public class MainController {
                             errorText.setText("Letter " + currentChar + " has been used before!");
                             casesText.setText("");
                             timeText.setText("");
+                            outputGrid.getChildren().clear();
                             return;
                         }
                     }
@@ -167,6 +174,7 @@ public class MainController {
                             errorText.setText("Piece " + previousChar + " is not valid!");
                             casesText.setText("");
                             timeText.setText("");
+                            outputGrid.getChildren().clear();
                             return;
                         }
                     }
@@ -194,6 +202,7 @@ public class MainController {
                     errorText.setText("Piece " + previousChar + " is not valid!");
                     casesText.setText("");
                     timeText.setText("");
+                    outputGrid.getChildren().clear();
                     return;
                 }
             }
@@ -201,6 +210,7 @@ public class MainController {
                 errorText.setText("Number of pieces input not the same with input from first line!");
                 casesText.setText("");
                 timeText.setText("");
+                outputGrid.getChildren().clear();
                 return;
             }
             errorText.setText("");
@@ -217,6 +227,7 @@ public class MainController {
             errorText.setText("Solution not found!");
             casesText.setText("");
             timeText.setText("");
+            outputGrid.getChildren().clear();
             return;
         }
         for (char[] row : solution) {
@@ -225,6 +236,7 @@ public class MainController {
                     errorText.setText("Solution contains empty cells!");
                     casesText.setText("");
                     timeText.setText("");
+                    outputGrid.getChildren().clear();
                     return;
                 }
             }
