@@ -1,0 +1,6 @@
+3 2 2
+DEFAULT
+AA
+ A
+B
+BB
